@@ -1,21 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import 'css/App.css';
+import Loading from 'components/Loading';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Loading type={"MutatingDots"}/>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://www.mapbox.com/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Create Map using Mapbox
         </a>
       </header>
     </div>
