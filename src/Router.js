@@ -1,3 +1,4 @@
+import MapboxSample from 'components/MapboxSample';
 import 'css/App.css';
 import 'css/Router.scss';
 
@@ -36,6 +37,9 @@ function Router() {
           <Switch>
             <Route exact path={"/"} >
               <App />
+            </Route>
+            <Route exact path={"/map-sample"} >
+              <MapboxSample />
             </Route>
             <Route path={'*'}>
               <NoMatch />
