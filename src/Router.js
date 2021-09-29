@@ -36,7 +36,7 @@ function Router() {
         <Suspense fallback={<Loading type={"GooLoader"} />}>
           <Switch>
             <Route exact path={"/"} >
-              <App />
+              <MapboxSample />
             </Route>
             <Route exact path={"/map-sample"} >
               <MapboxSample />

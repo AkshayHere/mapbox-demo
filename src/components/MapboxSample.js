@@ -32,7 +32,7 @@ function Component(props) {
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [lng, lat],
             zoom: zoom
-        });
+        });        
     });
 
     useEffect(() => {
@@ -41,11 +41,31 @@ function Component(props) {
             setLng(map.current.getCenter().lng.toFixed(4));
             setLat(map.current.getCenter().lat.toFixed(4));
             setZoom(map.current.getZoom().toFixed(2));
+        });    
+        
+        map.current.on('load', () => {
+            console.log('loaded map...');
+            // new mapboxgl.Marker(
+            //     <div
+            //       style={{
+            //         width: '5rem',
+            //         height: '5rem',
+            //         borderRadius: '50%',
+            //         cursor: 'pointer',
+            //       }} />
+            //     )
+            //     .setLngLat([30.5, 50.5])
+            //     .addTo(map.current);
+
+            // Create a new marker.
+            const marker = new mapboxgl.Marker()
+            .setLngLat([30.5, 50.5])
+            .addTo(map.current);
         });
     });
 
     return (
-        <div>
+        <div className="map-background">
             <div ref={mapContainer} className="map-container" />
         </div>
     );
